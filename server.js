@@ -51,7 +51,7 @@ async function shapeDatabase() {
 
 async function start() {
   try {
-    await shapeDatabase();
+    //await shapeDatabase();
     module.exports = pool;
     
     const app = require("./app");

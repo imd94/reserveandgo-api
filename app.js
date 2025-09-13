@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser')
 const AppError = require('./utilities/appError'); 
 const globalErrorHandler = require('./controllers/errorController');
 const routerApi = require('./router-api');
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.urlencoded({ extended: false })); // add user submited data (from form) to our request object
 app.use(express.json()); // send json data to our request object
+app.use(cookieParser());
 
 // 3) ROUTES
 app.use(apiPath, routerApi);

@@ -91,11 +91,3 @@ exports.isLoggedIn = catchAsync(async (req, res, next) => {
   });
 });
 
-
-exports.isAuth = function(req, res) {
-  if(req.user) {
-    res.json(req.user)
-  } else {
-    res.json(false);
-  }
-}
